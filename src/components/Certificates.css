@@ -1,0 +1,123 @@
+.certificates-section {
+  background-color: #0D0C1D;
+  padding: 80px 20px;
+  color: var(--starlight);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2.7rem;
+  color: white;
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.section-title svg {
+  font-size: 2.2rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cert-card {
+  background: linear-gradient(145deg, rgba(75, 0, 130, 0.10), rgba(143, 92, 255, 0.10));
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(75, 0, 130, 0.18);
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(75, 0, 130, 0.18);
+  border-color: var(--violet);
+}
+
+.cert-card h3 {
+  font-size: 1.2rem;
+  color: #E6E6FA;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.platform {
+  font-size: 0.95rem;
+  color: #E6E6FA;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.completion-date {
+  font-size: 0.85rem;
+  color: #E6E6FA;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.duration {
+  font-size: 0.85rem;
+  color: #E6E6FA;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.credential-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--violet);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(143, 92, 255, 0.3);
+  background: rgba(143, 92, 255, 0.1);
+  margin-top: auto;
+}
+
+.credential-link:hover {
+  color: white;
+  background: rgba(143, 92, 255, 0.2);
+  border-color: var(--violet);
+  transform: translateY(-2px);
+}
+
+.credential-link svg {
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-title svg {
+    font-size: 1.8rem;
+  }
+}
