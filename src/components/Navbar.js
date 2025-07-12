@@ -4,6 +4,16 @@ import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setShowDropdown(false);
+  };
 
   return (
     <nav
@@ -11,19 +21,20 @@ const Navbar = () => {
       onMouseLeave={() => setShowDropdown(false)}
     >
       <div className="navbar-left">
-        <a href="#hero" className="logo">Iniya</a>
+        <a href="#hero" className="logo" onClick={closeMobileMenu}>Iniya</a>
       </div>
 
-      <div className="navbar-center">
-        <a href="#about">About</a>
-        <a href="#certificates">Certifications</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <div className={`navbar-center ${isMobileMenuOpen ? 'active' : ''}`}>
+        <a href="#about" onClick={closeMobileMenu}>About</a>
+        <a href="#certificates" onClick={closeMobileMenu}>Certifications</a>
+        <a href="#achievements" onClick={closeMobileMenu}>Achievements</a>
+        <a href="#projects" onClick={closeMobileMenu}>Projects</a>
+        <a href="#contact" onClick={closeMobileMenu}>Contact</a>
 
         <div
           className="socials-dropdown"
           onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
         >
           <span className="dropdown-title">Socials ▾</span>
           {showDropdown && (
@@ -43,6 +54,12 @@ const Navbar = () => {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </nav>
   );

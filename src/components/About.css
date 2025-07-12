@@ -232,20 +232,36 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 60px 20px;
+  }
+  
   .skills-blocks {
-    grid-template-columns: 1fr;
     gap: 40px;
   }
   
+  .skill-column {
+    padding: 25px;
+  }
+  
   .hobbies-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 25px;
   }
   
   .extracurricular-grid {
-    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 50px 15px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
   }
   
   .about-subtitle {
@@ -254,5 +270,120 @@
   
   .about-subtitle svg {
     font-size: 1.4rem;
+  }
+  
+  .skills-blocks {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .skill-column {
+    padding: 20px;
+  }
+  
+  .skill-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .hobbies-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .hobby-item {
+    min-width: 150px;
+    max-width: 250px;
+    width: 100%;
+  }
+  
+  .extracurricular-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .extracurricular-card {
+    padding: 20px;
+  }
+  
+  .resume-btn {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 40px 10px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .about-subtitle {
+    font-size: 1.3rem;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .about-subtitle svg {
+    font-size: 1.2rem;
+  }
+  
+  .skill-column {
+    padding: 15px;
+  }
+  
+  .skill-buttons {
+    gap: 8px;
+  }
+  
+  .skill-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .hobby-item {
+    padding: 15px;
+  }
+  
+  .hobby-icon {
+    font-size: 1.5rem;
+  }
+  
+  .hobby-item span {
+    font-size: 0.9rem;
+  }
+  
+  .hobby-desc {
+    font-size: 0.8rem;
+  }
+  
+  .extracurricular-card {
+    padding: 15px;
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .extracurricular-card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .card-subtitle,
+  .card-description {
+    font-size: 0.85rem;
+  }
+  
+  .resume-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }

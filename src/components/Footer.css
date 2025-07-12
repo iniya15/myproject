@@ -4,3 +4,17 @@
   background-color: #1e1e1e;
   color: white;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}

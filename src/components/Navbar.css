@@ -69,22 +69,109 @@
   transform: scale(1.2);
 }
 
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--starlight);
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 16px 30px;
+  }
+  
+  .navbar-center {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+    padding: 16px 20px;
   }
-
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
   .navbar-center {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #0D0C1D;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-top: 40px;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
   }
-
-  .dropdown-icons {
-    top: 36px;
+  
+  .navbar-center.active {
     left: 0;
-    flex-wrap: wrap;
+  }
+  
+  .navbar-center a,
+  .dropdown-title {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-center a:hover,
+  .dropdown-title:hover {
+    background-color: rgba(143, 92, 255, 0.1);
+  }
+  
+  .dropdown-icons {
+    position: static;
+    background-color: transparent;
+    padding: 10px 0;
+    box-shadow: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .dropdown-icons a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+  
+  .logo {
+    font-size: 1.4rem;
+  }
+  
+  .navbar-center {
+    top: 70px;
+    height: calc(100vh - 70px);
+    gap: 25px;
+    padding-top: 30px;
+  }
+  
+  .navbar-center a,
+  .dropdown-title {
+    font-size: 1rem;
   }
 }
