@@ -22,28 +22,36 @@ const achievements = [
     description: "Secured 2nd Place in Pitch Perfect (Ideathon) competition organized by Intellexa Club of REC."
   },
   {
-    title: "Smart India Hackathon 2024 - Software Edition",
-    platform: "Top 100 teams",
+    title: "Smart India Hackathon 2024",
+    platform: "Software Edition - Top 100",
     date: "2024",
-    description: "Participated in the prestigious Smart India Hackathon, reaching the top 100 teams in the college levelin the software edition."
+    description: "Participated in the prestigious Smart India Hackathon, reaching the top 100 teams in the college level in the software edition."
   }
 ];
 
 const Achievements = () => {
   return (
     <section className="achievements-section" id="achievements">
-      <h2 className="section-title"><FaTrophy /> Participation & Achievements</h2>
+      <div className="achievements-header">
+        <h2 className="section-title">Achievements</h2>
+        <p className="section-subtitle">
+          Recognition and participation in various competitions and hackathons that showcase my problem-solving skills and innovative thinking.
+        </p>
+      </div>
       
       <div className="achievements-grid">
         {achievements.map((achievement, index) => (
           <div key={index} className="achievement-card">
-            <div className="card-icon">
-              <FaTrophy />
+            <div className="achievement-header">
+              <FaTrophy className="achievement-icon" />
+              <div>
+                <h3 className="achievement-title">{achievement.title}</h3>
+                <p className="achievement-platform">{achievement.platform}</p>
+              </div>
             </div>
-            <h3>{achievement.title}</h3>
-            <p className="platform">{achievement.platform}</p>
-            <p className="date">{achievement.date}</p>
-            <p className="description">{achievement.description}</p>
+            
+            <p className="achievement-date">{achievement.date}</p>
+            <p className="achievement-description">{achievement.description}</p>
           </div>
         ))}
       </div>
@@ -55,7 +63,8 @@ const Achievements = () => {
           rel="noopener noreferrer"
           className="linkedin-link"
         >
-          <FaLinkedin /> View More on LinkedIn
+          <FaLinkedin />
+          <span>View More on LinkedIn</span>
         </a>
       </div>
     </section>

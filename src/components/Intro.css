@@ -1,0 +1,272 @@
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--pure-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: all 1s ease;
+}
+
+.intro-container.zoomed {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.intro-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 5vw;
+  transition: all 0.8s ease;
+}
+
+.intro-title {
+  font-size: 4rem;
+  font-weight: 200;
+  color: var(--soft-white);
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  animation: fadeInUp 1s ease;
+}
+
+.intro-subtitle {
+  font-size: 1.4rem;
+  color: var(--text-gray);
+  margin: 0 0 3rem 0;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
+.intro-instruction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: var(--text-gray);
+  font-size: 1.1rem;
+  font-weight: 300;
+  animation: fadeInUp 1s ease 0.4s both;
+}
+
+.search-icon {
+  font-size: 1.2rem;
+  color: var(--accent-lavender);
+  animation: pulse 2s infinite;
+}
+
+.zoom-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--soft-white);
+  border: 1px solid var(--soft-white);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease 0.6s both;
+}
+
+.zoom-button:hover {
+  background: var(--soft-white);
+  color: var(--pure-black);
+  transform: translateY(-2px);
+}
+
+.clustered-sections {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 3rem 0;
+  animation: fadeInUp 1s ease 0.8s both;
+}
+
+.clustered-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 25px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--soft-white);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  min-width: 180px;
+  transform: scale(0.8);
+  opacity: 0.7;
+}
+
+.clustered-card:hover {
+  border-color: var(--accent-lavender);
+  transform: scale(1.1);
+  opacity: 1;
+  background: rgba(150, 123, 182, 0.1);
+  box-shadow: 0 10px 30px rgba(150, 123, 182, 0.2);
+}
+
+.clustered-card.hovered {
+  transform: scale(1.1);
+  opacity: 1;
+  z-index: 10;
+}
+
+.clustered-card.selected {
+  border-color: var(--accent-lavender);
+  background: rgba(150, 123, 182, 0.2);
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 15px 40px rgba(150, 123, 182, 0.3);
+}
+
+.section-icon {
+  font-size: 2rem;
+  color: var(--accent-lavender);
+  transition: all 0.3s ease;
+}
+
+.clustered-card:hover .section-icon {
+  transform: scale(1.2);
+}
+
+.clustered-card h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.clustered-card p {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.explore-all-button {
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--accent-lavender);
+  border: 1px solid var(--accent-lavender);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease 1s both;
+}
+
+.explore-all-button:hover {
+  background: var(--accent-lavender);
+  color: var(--pure-black);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: 3rem;
+  }
+  
+  .intro-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .clustered-sections {
+    height: 300px;
+  }
+  
+  .clustered-card {
+    padding: 20px 15px;
+    min-width: 150px;
+  }
+  
+  .section-icon {
+    font-size: 1.5rem;
+  }
+  
+  .clustered-card h3 {
+    font-size: 1rem;
+  }
+  
+  .clustered-card p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-title {
+    font-size: 2.5rem;
+  }
+  
+  .intro-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .intro-instruction {
+    font-size: 1rem;
+  }
+  
+  .zoom-button {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+  
+  .clustered-sections {
+    height: 250px;
+  }
+  
+  .clustered-card {
+    padding: 15px 10px;
+    min-width: 120px;
+  }
+  
+  .section-icon {
+    font-size: 1.3rem;
+  }
+  
+  .clustered-card h3 {
+    font-size: 0.9rem;
+  }
+  
+  .clustered-card p {
+    font-size: 0.65rem;
+  }
+}

@@ -5,106 +5,122 @@ import { FaLaptopCode, FaBrain, FaMusic, FaUtensils, FaBook, FaStar, FaPen, FaMi
 const About = () => {
   return (
     <section className="about-section" id="about">
-      <h2 className="section-title"><FaUser /> About Me</h2>
+      <div className="about-header">
+        <h2 className="section-title">About</h2>
+        <p className="section-subtitle">
+          A passionate CSBS student with a love for creating meaningful digital experiences and solving complex problems through innovative web development.
+        </p>
+      </div>
 
       {/* Technical & Soft Skills */}
-      <div className="skills-blocks">
-        <div className="skill-column">
-          <h3 className="about-subtitle"><FaLaptopCode /> Technical Skills</h3>
-          <div className="skill-buttons">
-            {['React.js', 'Python', 'MySQL', 'Firebase Authentication', 'HTML', 'CSS', 'JavaScript', 'Python Flask', 'Java', 'C'].map((skill) => (
-              <button key={skill} className="skill-btn">{skill}</button>
+      <div className="skills-section">
+        <div className="skill-group">
+          <h3 className="skill-title">Technical Skills</h3>
+          <div className="skill-tags">
+            {['React.js', 'Python', 'MySQL', 'Firebase', 'HTML', 'CSS', 'JavaScript', 'Flask', 'Java', 'C'].map((skill) => (
+              <span key={skill} className="skill-tag">{skill}</span>
             ))}
           </div>
         </div>
-        <div className="skill-column">
-          <h3 className="about-subtitle"><FaBrain /> Soft Skills</h3>
-          <div className="skill-buttons">
-            {['Communication', 'Leadership', 'Teamwork', 'Adaptability', 'Time Management', 'Conflict Handling', 'Multitasking'].map((skill) => (
-              <button key={skill} className="skill-btn">{skill}</button>
+        
+        <div className="skill-group">
+          <h3 className="skill-title">Soft Skills</h3>
+          <div className="skill-tags">
+            {['Communication', 'Leadership', 'Teamwork', 'Adaptability', 'Time Management', 'Problem Solving'].map((skill) => (
+              <span key={skill} className="skill-tag">{skill}</span>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Hobbies - Compact Design with Descriptions */}
+      {/* Hobbies */}
       <div className="hobbies-section">
-        <h3 className="about-subtitle"><FaMusic /> Hobbies</h3>
+        <h3 className="section-subtitle">Interests & Hobbies</h3>
         <div className="hobbies-grid">
           <div className="hobby-item">
             <FaMusic className="hobby-icon" />
-            <span>Music</span>
-            <p className="hobby-desc">I'm a vocalist and love expressing through melody and lyrics.</p>
+            <div className="hobby-content">
+              <h4>Music</h4>
+              <p>Vocalist who finds expression through melody and lyrics</p>
+            </div>
           </div>
           <div className="hobby-item">
             <FaBook className="hobby-icon" />
-            <span>Reading</span>
-            <p className="hobby-desc">Books help me escape and explore — fiction, philosophy, and poetry.</p>
+            <div className="hobby-content">
+              <h4>Reading</h4>
+              <p>Exploring worlds through fiction, philosophy, and poetry</p>
+            </div>
           </div>
           <div className="hobby-item">
             <FaUtensils className="hobby-icon" />
-            <span>Cooking</span>
-            <p className="hobby-desc">I enjoy experimenting with recipes and making comfort food.</p>
+            <div className="hobby-content">
+              <h4>Cooking</h4>
+              <p>Experimenting with recipes and creating comfort food</p>
+            </div>
           </div>
           <div className="hobby-item">
             <FaExternalLinkAlt className="hobby-icon" />
-            <span>Binge-Watching</span>
-            <p className="hobby-desc">I unwind with good shows, movies & anime— from thrillers to heartfelt dramas and clever comedies.</p>
+            <div className="hobby-content">
+              <h4>Entertainment</h4>
+              <p>Enjoying shows, movies & anime across various genres</p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Extra-Curricular - Card Design */}
+      {/* Extra-Curricular */}
       <div className="extracurricular-section">
-        <h3 className="about-subtitle"><FaStar /> Extra-Curricular</h3>
+        <h3 className="section-subtitle">Extra-Curricular Activities</h3>
         <div className="extracurricular-grid">
           <div className="extracurricular-card">
-            <div className="card-icon">
-              <FaPen />
+            <div className="card-header">
+              <FaPen className="card-icon" />
+              <h4>UiPhoria</h4>
             </div>
-            <h4>UiPhoria</h4>
-            <p className="card-subtitle">Automation Club</p>
-            <p className="card-description">Editorial Team – contributed to technical writing, documentation, and creative content for the Automation Club's initiatives.</p>
+            <p className="card-role">Editorial Team</p>
+            <p className="card-description">Contributed to technical writing, documentation, and creative content for the Automation Club's initiatives.</p>
           </div>
 
           <div className="extracurricular-card">
-            <div className="card-icon">
-              <FaMicrophone />
+            <div className="card-header">
+              <FaMicrophone className="card-icon" />
+              <h4>Film Club</h4>
             </div>
-            <h4>Film Club</h4>
-            <p className="card-subtitle">Music Lead</p>
-            <p className="card-description">Started as Vocalist, now Music Lead – lead musical performances, team coordination, and stage management.</p>
+            <p className="card-role">Music Lead</p>
+            <p className="card-description">Started as Vocalist, now leading musical performances, team coordination, and stage management.</p>
           </div>
 
           <div className="extracurricular-card">
-            <div className="card-icon">
-              <FaFileAlt />
+            <div className="card-header">
+              <FaFileAlt className="card-icon" />
+              <h4>Youth Red Cross</h4>
             </div>
-            <h4>Youth Red Cross</h4>
-            <p className="card-subtitle">Content Team</p>
+            <p className="card-role">Content Team</p>
             <p className="card-description">Created posts and content for YRC events and social campaigns.</p>
           </div>
 
           <div className="extracurricular-card">
-            <div className="card-icon">
-              <FaPuzzlePiece />
+            <div className="card-header">
+              <FaPuzzlePiece className="card-icon" />
+              <h4>IEEE TEMS</h4>
             </div>
-            <h4>IEEE TEMS</h4>
-            <p className="card-subtitle">Society Member</p>
+            <p className="card-role">Society Member</p>
             <p className="card-description">Participated in club initiatives focused on technology, entrepreneurship, and management.</p>
           </div>
         </div>
       </div>
 
-      <a
-        href="/Iniya_Resume.pdf"
-        download
-        target="_blank"
-        rel="noopener noreferrer"
-        className="resume-btn"
-      >
-        <FaResume /> Download Resume
-      </a>
+      <div className="resume-section">
+        <a
+          href="/Iniya_Resume.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-button"
+        >
+          <FaResume /> Download Resume
+        </a>
+      </div>
     </section>
   );
 };

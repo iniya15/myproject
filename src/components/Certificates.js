@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Certificates.css';
-import { FaCertificate, FaLinkedin, FaTrophy, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
 
 const certificates = [
   {
@@ -25,53 +25,36 @@ const certificates = [
   },
 ];
 
-const achievements = [
-  {
-    title: "Completed Advanced Web Development Course",
-    platform: "LinkedIn Learning",
-    date: "2024",
-    description: "Mastered modern web development techniques and best practices"
-  },
-  {
-    title: "Participated in Hackathon 2024",
-    platform: "College Event",
-    date: "2024",
-    description: "Led team to develop innovative solution for social impact"
-  },
-  {
-    title: "Published Technical Article",
-    platform: "Medium",
-    date: "2024",
-    description: "Shared insights on modern web development practices"
-  }
-];
-
 const Certificates = () => {
-  const [loading, setLoading] = useState(false);
-
   return (
     <section className="certificates-section" id="certificates">
-      <h2 className="section-title"><FaCertificate /> Certifications</h2>
+      <div className="certificates-header">
+        <h2 className="section-title">Certifications</h2>
+        <p className="section-subtitle">
+          Professional certifications and courses that demonstrate my commitment to continuous learning and skill development.
+        </p>
+      </div>
       
-      <div className="cert-grid">
+      <div className="certificates-grid">
         {certificates.map((cert, index) => (
-          <div key={index} className="cert-card">
-            <h3>{cert.title}</h3>
-            <p className="platform">{cert.platform}</p>
-            {cert.completionDate && (
-              <p className="completion-date">Completed: {cert.completionDate}</p>
-            )}
-            {cert.duration && (
-              <p className="duration">Duration: {cert.duration}</p>
-            )}
+          <div key={index} className="certificate-card">
+            <div className="certificate-header">
+              <FaCertificate className="certificate-icon" />
+              <div>
+                <h3 className="certificate-title">{cert.title}</h3>
+                <p className="certificate-platform">{cert.platform}</p>
+              </div>
+            </div>
+            
             {cert.credential && (
               <a 
                 href={cert.credential} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="credential-link"
+                className="certificate-link"
               >
-                <FaExternalLinkAlt /> View Credential
+                <FaExternalLinkAlt />
+                <span>View Credential</span>
               </a>
             )}
           </div>
